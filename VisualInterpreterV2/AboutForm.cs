@@ -20,7 +20,12 @@ namespace VisualInterpreterV2
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://github.com/EthanGrahn/VisualInterpreterV2" as string);
+            Process.Start("https://github.com/EthanGrahn/VisualInterpreterV2");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://www.ekgrahn.com");
         }
     }
 }

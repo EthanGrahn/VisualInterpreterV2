@@ -206,6 +206,7 @@ namespace VisualInterpreterV2
                         n9(currInstr.op1, currInstr.op2, currInstr.op3);
                         break;
                     default:
+                        mainForm.PrintOutput("Missing end of program card (+9000000000)", false);
                         isRunning = false;
                         break;
                 }
