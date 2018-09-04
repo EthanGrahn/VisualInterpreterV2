@@ -117,22 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>General:
-
-To test a program file, you must first open a program file. A program file is ".dat" by default, but can be any plain text file with any extension.
+  <data name="label2.Text" xml:space="preserve">
+    <value>To test a program file, you must first open a program file. A program file is ".dat" by default, but can be any plain text file with any extension.
 With the program file opened you can Run (F5) or Step (F6) through the program. While using Step, the next line to be executed will be shown in red.
-
-Commands
-
-F1 - Help
-F5 - Run
-F6 - Step
-F7 - Reset
-
-Input File Format:
- 
-1-1000 lines for data entry
+</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>1-1000 lines for data entry
 +9999999999 - Marker to end data entries
 1-1000 lines for program code
 +9000000000 - Last line of program code (required)

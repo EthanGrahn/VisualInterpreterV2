@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,10 +99,22 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Index,
             this.Value});
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle32;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(3, 3);
             this.dataGridView.Name = "dataGridView";
@@ -128,6 +146,12 @@
             this.programGridView.AllowUserToAddRows = false;
             this.programGridView.AllowUserToDeleteRows = false;
             this.programGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.programGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.programGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.programGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LineNumber,
@@ -135,6 +159,14 @@
             this.Operand1,
             this.Operand2,
             this.Operand3});
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.programGridView.DefaultCellStyle = dataGridViewCellStyle34;
             this.programGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.programGridView.Location = new System.Drawing.Point(261, 3);
             this.programGridView.Name = "programGridView";
@@ -198,10 +230,22 @@
             this.inputGridView.AllowUserToAddRows = false;
             this.inputGridView.AllowUserToDeleteRows = false;
             this.inputGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.inputGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle35;
             this.inputGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inputGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
             this.Value2});
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.inputGridView.DefaultCellStyle = dataGridViewCellStyle36;
             this.inputGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputGridView.Location = new System.Drawing.Point(519, 3);
             this.inputGridView.Name = "inputGridView";
@@ -276,7 +320,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -291,13 +335,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // interpreterToolStripMenuItem
             // 
@@ -311,21 +356,25 @@
             // 
             // runFToolStripMenuItem
             // 
+            this.runFToolStripMenuItem.Enabled = false;
             this.runFToolStripMenuItem.Name = "runFToolStripMenuItem";
-            this.runFToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.runFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.runFToolStripMenuItem.Text = "Run    F5";
             this.runFToolStripMenuItem.Click += new System.EventHandler(this.runFToolStripMenuItem_Click);
             // 
             // stepF6ToolStripMenuItem
             // 
+            this.stepF6ToolStripMenuItem.Enabled = false;
             this.stepF6ToolStripMenuItem.Name = "stepF6ToolStripMenuItem";
-            this.stepF6ToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.stepF6ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stepF6ToolStripMenuItem.Text = "Step   F6";
+            this.stepF6ToolStripMenuItem.Click += new System.EventHandler(this.stepF6ToolStripMenuItem_Click);
             // 
             // resetF7ToolStripMenuItem
             // 
+            this.resetF7ToolStripMenuItem.Enabled = false;
             this.resetF7ToolStripMenuItem.Name = "resetF7ToolStripMenuItem";
-            this.resetF7ToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.resetF7ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetF7ToolStripMenuItem.Text = "Reset F7";
             this.resetF7ToolStripMenuItem.Click += new System.EventHandler(this.resetF7ToolStripMenuItem_Click);
             // 
