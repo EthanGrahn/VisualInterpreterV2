@@ -117,19 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label2.Text" xml:space="preserve">
-    <value>To test a program file, you must first open a program file. A program file is ".dat" by default, but can be any plain text file with any extension.
-With the program file opened you can Run (F5) or Step (F6) through the program. While using Step, the next line to be executed will be shown in red.
-</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>1-1000 lines for data entry
-+9999999999 - Marker to end data entries
-1-1000 lines for program code
-+9000000000 - Last line of program code (required)
-+9999999999 - Marker to end program code
-1-1000 lines for input</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

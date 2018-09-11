@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>VI_icon_256.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,11 +56,11 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HelpForm.cs">
       <SubType>Form</SubType>
@@ -65,16 +68,34 @@
     <Compile Include="HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LanguageAForm.Designer.cs">
+      <DependentUpon>LanguageAForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LanguageBForm.Designer.cs">
+      <DependentUpon>LanguageBForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguageAForm.resx">
+      <DependentUpon>LanguageAForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguageBForm.resx">
+      <DependentUpon>LanguageBForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +115,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VI_icon_16.ico" />
+    <Content Include="VI_icon_256.ico" />
+    <Content Include="VI_icon_32.ico" />
+    <Content Include="VI_icon_48.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

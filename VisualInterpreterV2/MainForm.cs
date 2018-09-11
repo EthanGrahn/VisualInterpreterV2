@@ -12,12 +12,13 @@ using System.Windows.Forms;
 namespace VisualInterpreterV2
 {
 
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private string inputFile = string.Empty;
+        private string filePath = string.Empty;
         private int prevIP = 0;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             KeyPreview = true;
@@ -35,7 +36,10 @@ namespace VisualInterpreterV2
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
+                filePath = openFileDialog1.FileName;
                 inputFile = sr.ReadToEnd();
+                sr.Close();
+                reimportFileF4ToolStripMenuItem.Enabled = true;
                 Program.LoadData(inputFile);
             }
         }
@@ -46,6 +50,10 @@ namespace VisualInterpreterV2
             {
                 case Keys.F1:
                     helpF1ToolStripMenuItem.PerformClick();
+                    e.Handled = true;
+                    break;
+                case Keys.F4:
+                    reimportFileF4ToolStripMenuItem.PerformClick();
                     e.Handled = true;
                     break;
                 case Keys.F5:
@@ -126,6 +134,9 @@ namespace VisualInterpreterV2
 
             switch (key)
             {
+                case "F4":
+                    reimportFileF4ToolStripMenuItem.Enabled = isEnabled;
+                    break;
                 case "F5":
                     runFToolStripMenuItem.Enabled = isEnabled;
                     break;
@@ -215,6 +226,42 @@ namespace VisualInterpreterV2
             {
                 Program.waitHandle.Set();
             }
+        }
+
+        private void versionBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            versionAToolStripMenuItem.Checked = false;
+            versionBToolStripMenuItem.Checked = true;
+            Program.langVersion = 'b';
+        }
+
+        private void versionAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            versionBToolStripMenuItem.Checked = false;
+            versionAToolStripMenuItem.Checked = true;
+            Program.langVersion = 'a';
+        }
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (versionAToolStripMenuItem.Checked)
+            {
+                Form aForm = new LanguageAForm();
+                aForm.ShowDialog();
+            }
+            else if (versionBToolStripMenuItem.Checked)
+            {
+                Form bForm = new LanguageBForm();
+                bForm.ShowDialog();
+            }
+        }
+
+        private void reimportFileF4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.IO.StreamReader sr = new System.IO.StreamReader(filePath);
+            inputFile = sr.ReadToEnd();
+            sr.Close();
+            Program.LoadData(inputFile);
         }
     }
 }
