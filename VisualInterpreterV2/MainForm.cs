@@ -174,6 +174,11 @@ namespace VisualInterpreterV2
             prevIP = line;
         }
 
+        public void DisplayDialogue(string text, string caption)
+        {
+            MessageBox.Show(text, caption);
+        }
+
         private void resetF7ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (inputFile != string.Empty)

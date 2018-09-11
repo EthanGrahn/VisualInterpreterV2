@@ -77,6 +77,11 @@ namespace VisualInterpreterV2
             mainForm.Reset();
             mainForm.ResetDataGrid();
 
+            if (langVersion == 'b')
+            {
+                mainForm.DisplayDialogue("Language B not fully implemented. Unable to load file.", "Load Error");
+            }
+
             int index = 0;
             int scanSector = 0;
             string[] splitInput = Regex.Split(input, @"\s+");
@@ -347,13 +352,13 @@ namespace VisualInterpreterV2
             if (langVersion == 'a')
             {
                 data[op3] = data[op1] + data[op2];
-                mainForm.AddToDataGrid(op3, data[op1] + data[op2]);
+                mainForm.AddToDataGrid(op3, data[op3]);
                 mainForm.PrintOutput("Adding " + data[op1] + " and " + data[op2] + ", storing in location " + op3 + NEW_LINE, true);
             }
             else if (langVersion == 'b')
             {
                 data[SYMBOL_TABLE[op3]] = data[SYMBOL_TABLE[op1]] + data[SYMBOL_TABLE[op2]];
-                mainForm.AddToDataGrid(SYMBOL_TABLE[op3], data[SYMBOL_TABLE[op1]] + data[SYMBOL_TABLE[op2]]);
+                mainForm.AddToDataGrid(SYMBOL_TABLE[op3], data[SYMBOL_TABLE[op3]]);
                 mainForm.PrintOutput("Adding " + data[SYMBOL_TABLE[op1]] + " and " + data[SYMBOL_TABLE[op2]] + 
                                      ", storing in location " + SYMBOL_TABLE[op3] + NEW_LINE, true);
 
