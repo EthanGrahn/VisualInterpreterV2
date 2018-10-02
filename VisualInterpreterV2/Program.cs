@@ -77,12 +77,6 @@ namespace VisualInterpreterV2
             mainForm.Reset();
             mainForm.ResetDataGrid();
 
-            if (langVersion == 'b')
-            {
-                mainForm.DisplayDialogue("Language B not fully implemented. Unable to load file.", "Load Error");
-                return;
-            }
-
             int index = 0;
             int scanSector = 0;
             input = Regex.Replace(input, @"%.*", ""); // removes comments
@@ -143,13 +137,13 @@ namespace VisualInterpreterV2
             }
             else if (langVersion == 'b')
             {
-                Stack<string> newInput = new Stack<string>(splitInput);
+                Stack<string> newInput = new Stack<string>(splitInput.Reverse());
                 while (newInput.Count > 0)
                 {
                     string s = newInput.Pop();
 
                     if (Regex.IsMatch(s, @"\s+") || s == String.Empty)
-                        continue;
+                        continue; // skip empty lines
 
                     if (s == "+9999999999")
                     {
@@ -171,35 +165,69 @@ namespace VisualInterpreterV2
                         return;
                     }
 
-                    if (scanSector == 0)
+                    mainForm.PrintOutput(s + NEW_LINE, true);
+                    if (scanSector == 0) // data cards
                     {
                         int c = int.Parse(s.Substring(2, 3)); // op1
                         int n = int.Parse(s.Substring(5, 3)); // op2
+                        SYMBOL_TABLE[c] = index;
+                        string s2 = newInput.Pop();
+                        int d = int.Parse(s2.Substring(1));
                         for (int i = 0; i < n; i++)
                         {
-                            string s2 = newInput.Pop();
-                            int d = int.Parse(s2.Substring(1));
-                            SYMBOL_TABLE[d] = index;
-                            data[i] = d;
-                            mainForm.AddToDataGrid(index, d);
+                            data[index + i] = d;
+                            mainForm.AddToDataGrid(c + i, d);
+                            mainForm.PrintOutput(s2 + NEW_LINE, true);
                         }
+
+                        index = index + n;
                     }
-                    else if (scanSector == 1)
+                    else if (scanSector == 1) // instruction cards
                     {
                         INSTRUCTION instr = ParseInstruction(s);
+                        if (instr.instr == "-7")
+                        {
+                            if (LABEL_TABLE[instr.op1] > 0)
+                            {
+                                mainForm.PrintOutput("ERROR: Duplicate Label " + instr.op1 + NEW_LINE, true);
+                                return;
+                            }
+
+                            LABEL_TABLE[instr.op1] = index;
+                        }
+                        else if ((instr.instr[0] == '+') && ((instr.instr[1] == '4') || (instr.instr[1] == '5') || (instr.instr[1] == '7')))
+                        {
+                            if (LABEL_TABLE[instr.op3] < 0)
+                                LABEL_TABLE[instr.op3] = -2; // referenced, but not defined
+                        }
+                        else if ((instr.instr[0] == '-') && ((instr.instr[1] == '4') || (instr.instr[1] == '5')))
+                        {
+                            if (LABEL_TABLE[instr.op3] < 0)
+                                LABEL_TABLE[instr.op3] = -2; // referenced, but not defined
+                        }
+
                         instrmem[index] = instr;
                         mainForm.AddToProgramGrid(instr.instr, instr.op1.ToString("D3"), instr.op2.ToString("D3"),
                             instr.op3.ToString("D3"));
+                        index++;
                     }
-                    else if (scanSector == 2)
+                    else if (scanSector == 2) // input cards
                     {
                         int d = int.Parse(s.Substring(1));
                         card[index] = d;
                         mainForm.AddToInputGrid(s);
+                        index++;
                     }
 
-                    mainForm.PrintOutput(s + NEW_LINE, true);
-                    index++;
+                }
+
+                foreach (int i in LABEL_TABLE)
+                {
+                    if (i == -2)
+                    {
+                        mainForm.PrintOutput("ERROR: Use of undefined label " + i + NEW_LINE, true);
+                        return;
+                    }
                 }
             }
 
@@ -771,8 +799,15 @@ namespace VisualInterpreterV2
         /// <param name="op3"></param>
         static void n7(int op1, int op2, int op3)
         {
-            // unused operator in versions a and b
-            mainForm.PrintOutput("Unused operator -7" + NEW_LINE, true);
+            // unused operator in versions a
+            if (langVersion == 'a')
+            {
+                mainForm.PrintOutput("Unused operator -7" + NEW_LINE, true);
+            }
+            else if (langVersion == 'b')
+            {
+                mainForm.PrintOutput("Label instruction; no operation performed" + NEW_LINE, true);
+            }
         }
 
         /// <summary>
