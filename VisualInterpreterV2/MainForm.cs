@@ -23,6 +23,7 @@ namespace VisualInterpreterV2
             InitializeComponent();
             KeyPreview = true;
             Program.mainForm = this;
+            Program.compSim = new ComputerSim(this);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
