@@ -41,9 +41,6 @@ namespace VisualInterpreterV2
 
         public static void LoadData(string input)
         {
-            mainForm.Reset();
-            mainForm.ResetDataGrid();
-
             if (langVersion == 'a')
             {
                 language = new LanguageA();
@@ -52,6 +49,9 @@ namespace VisualInterpreterV2
             {
                 language = new LanguageB();
             }
+
+            mainForm.Reset();
+            mainForm.ResetDataGrid();
 
             input = Regex.Replace(input, @"%.*", ""); // remove comments
             string[] splitInput = Regex.Split(input, @"\s+"); // split string into array of instructions
